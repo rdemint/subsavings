@@ -1,11 +1,4 @@
 function calculateProgress() {
-
-	var savings = totalSavings();
-	console.log(savings);
-	var goals = goalAmounts();
-	updateProgressBars(goals, savings);
-
-
 	function totalSavings() {
 		return document.getElementById("totalSavings").value;
 	}
@@ -23,24 +16,20 @@ function calculateProgress() {
 		//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 		return goals
 	}
+
+
+	var savings = totalSavings();
+	console.log(savings);
+	var goals = goalAmounts();
+	updateProgressBars(goals, savings);
+
 }
 	
 function updateProgressBars(goals, totalSavings) {
-	var savings = totalSavings;
-	for (let i=0; i< goals.length; i++) {
-		if(goals[i].value < totalSavings) {
-			setProgressBar(goals[i].id, 100);
-			savings = savings - goals[i].value;
-		}
-
-		else {
-			let percentContrib = (totalSavings / goals[i].value)*100;
-			setProgressBar(goals[i].id, percentContrib);
-			savings = 0;
-		}
-
+	
 	function resetProgressBar(goals) {
 		for (let i =0; i< goals.length; i++) {
+			console.log('reseting bar ' + goals[i].id);
 			setProgressBar(goals[i].id, 0)
 		}
 	}
@@ -50,6 +39,22 @@ function updateProgressBars(goals, totalSavings) {
 		let progressBarId = 'progressBar' + String(id);
 		document.getElementById(progressBarId).style.width = progressBarVal;
 	}
+
+
+	resetProgressBar(goals);
+	var savings = totalSavings;
+	for (let i=0; i< goals.length; i++) {
+		if(goals[i].value < savings) {
+			setProgressBar(goals[i].id, 100);
+			savings = savings - goals[i].value;
+			console.log(savings);
+		}
+
+		else {
+			let percentContrib = (totalSavings / goals[i].value)*100;
+			setProgressBar(goals[i].id, percentContrib);
+			savings = 0;
+		}
 
 	}
 }
