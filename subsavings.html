@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Nav / header group -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand money" href="#" style="color:Chartreuse">Subsaving$</a>
+    </nav>
+
+    <div>
+      <div class="container"><small><em>Adjust your goal amounts and enter your total savings to see your progress</em></small></div>
+      
+    <ul class="list-group">
+    <!-- Goal 1 -->
+        <li class="list-group-item">
+          <div>
+           
+            <label>Road Trip</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+              <input 
+                id="goal1"
+                type="number" 
+                class="form-control w-25" 
+                value="8000">
+
+          </div>
+          <!-- Goal 1 Progress bar -->
+          <div class="progress">
+              <div 
+                id="progressBar1"
+                class="progress-bar" 
+                role="progressbar" 
+                style="width: 0%" 
+                aria-valuenow="25" 
+                aria-valuemin="0" 
+                aria-valuemax="100"
+                >
+              </div>
+          </div>
+          </div>
+        </li>
+        <!-- Goal 2 -->
+        <li class="list-group-item">
+          <div>
+            <label>Kayak</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+              <input 
+                id="goal2"
+                type="number" 
+                class="form-control w-25" 
+                value="1200">
+
+            </div>
+            <div class="progress">
+                <div 
+                  class="progress-bar" 
+                  role="progressbar" 
+                  style="width: 0%" 
+                  aria-valuenow="0" 
+                  aria-valuemin="0" 
+                  aria-valuemax="100"
+                  id="progressBar2" >
+                </div>
+            </div>
+        </li>
+        <!-- Goal 3 -->
+        <li class="list-group-item">
+          <div>
+            <label>Plane Ticket</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+              <input type="number" class="form-control w-25" id="goal3" value="750">
+
+          </div>
+          <div class="progress">
+              <div 
+                class="progress-bar" 
+                role="progressbar" 
+                style="width: 0%" 
+                aria-valuenow="25" 
+                aria-valuemin="0" 
+                aria-valuemax="100" 
+                id="progressBar3">
+              </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- Calculate Progress Group -->
+    <div class="container" style="margin-top:10px">
+      <div class="form-group">
+        <div style="display:flex">
+          <label style="padding-right: 5px">Total Savings</label>
+          <input type="number" class="form-control w-25" id="totalSavings">
+          <button 
+            class="btn btn-primary" 
+            type="submit" 
+            style="margin:5px" 
+            onclick="calculateProgress()"
+            >Calculate
+          </button>
+        </div>
+        <small><em>We'll calculate your progress based on your savings</em></small>
+      </div>
+    </div>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="subsavings.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
